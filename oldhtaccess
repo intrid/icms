@@ -1,0 +1,181 @@
+php_value memory_limit 256M
+
+# prevent directory listings
+Options -Indexes
+IndexIgnore */*
+
+# follow symbolic links
+Options FollowSymlinks
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI} /$ [NC]
+RewriteRule ^(.*)(/)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^www.mklimata.ru$ [NC]
+RewriteRule ^(.*)$ https://mklimata.ru/$1 [R=301,L]
+
+#
+
+
+
+RewriteRule  ^elektriceskij-teplyj-pol/(.+)$ /teplo-pol/$1 [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/conditioning$ /kondicionery [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/teplo-pol/infrakras-tp/pol/pol-1_2564.html$ /teplo-pol/infrakras-tp/pol/sploshnaya [L,R=301,NC]
+
+RewriteRule  ^catalog/mebel/shcaf/metallicheskie-arhivnye-shkafy$ /mebel/shcaf [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/cabinets/metall/shkafy-dlya-razdevalok/$ /mebel/metall [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/zhaluzi/$ /mebel/galuzi [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/teplovaya-tehnika/zavesy/teplovye-zavesy-tropik/$ /teplovaya-tehnika/zavesy [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/teplovaya-tehnika/zavesy/teplovaya-zavesa-teplomash/$ /teplovaya-tehnika/zavesy [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/teplovaya-tehnika/zavesy/teplovye-zavesy-na-dveri/$ /teplovaya-tehnika/zavesy [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/teplovaya-tehnika/infrakrasnye-obogrevateli/infrakrasnye-polochnye-obogrevateli/$ /teplovaya-tehnika/infrakrasnie-bogrevateli [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/teplovaya-tehnika/teplo/$ /teplovaya-tehnika [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/conditioning/ventilyaciya/klapany-domvent/$ /ventilyaciya [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/skameka/$ /mebel [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/teplovaya-tehnika/infrakrasnye-obogrevateli/$ /teplovaya-tehnika/infrakrasnie-bogrevateli [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/conditioning/kondicionery/zapchasti-dlya-konditsionerov/$ /montag [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/montag/sifon/sifon_2071.html$ /montag/sifon/sifon-scu-032 [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/teplo-pol/infrakrasnyy-teplyy-pol/$ /teplo-pol [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/teplovaya-tehnika/konvektor/konvektor-1_2026.html$ /teplovaya-tehnika/konvektor [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/stellag/$ /mebel/st [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/st/metallicheskie-stellazhi-dlya-doma/$ /mebel/st [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/st/metallicheskie-stellazhi-dlya-kladovoy/$ /mebel/st/stellas300 [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/conditioning/ventilyaciya/ventil/bytovye-vytyazhnye-ventilyatory/$ /ventilyaciya/ventil/bit [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/conditioning/$ /ventilyaciya [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/conditioning/ventilyaciya/plastikovaya-ventilyatsiya/$ /ventilyaciya/vozduhovody-plastikovye [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/conditioning/ventilyaciya/ventil/kanalnye-ventilyatory/$ /ventilyaciya/ventil/vent4 [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/mebel/doska1/doska1_1831.html$ /mebel/mebel-shkolnaya/doska1 [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/conditioning/kondicionery/electrolux/electrolux-2_954.html$ /kondicionery/electrolux [L,R=301,NC]
+
+RewriteRule  ^aktsii/aktsii-po-konditsioneram/$ /akcii-i-skidki [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/cbor/sborka-stellazhey/$ /servis/cbor [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/teplo-pol/teplyy-pol-pod-plitku/$ /teplo-pol [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/conditioning/kondicionery/kentatsu/kentatsu_888.html$ /kondicionery/kentatsu [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/conditioning/kondicionery/konditsionery-s-ustanovkoy/$ /kondicionery [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/ins-v/instrument/instrument_1411.html$ /instrument [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/conditioning/ventilyaciya/ozink/$ /ventilyaciya [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/montag/sifon/sifon_2265.html$ /servis [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/mebel/parta/parta-stul_300.html$ /mebel/mebel-shkolnaya/parta [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/conditioning/ventilyaciya/ventil/vent9/vent9_598.html$ /ventilyaciya [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/ins-v/telezhki-instrumentalnye/telezhki-instrumentalnye_2372.html$ /mebel/ins-v/telezhki-instrumentalnye [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/conditioning/kondicionery/mobil/mobil_492.html$ /kondicionery/klass_mobilnyj [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/st/metiz/metiz-1.html$ /mebel/st [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/instrument/prib/prib_2577.html$ /instrument/prib [L,R=301,NC]
+
+RewriteRule  ^oborudovanie/conditioning/kondicionery/konditsionery-mitsubishi/$ /kondicionery/mitsubishielectric [L,R=301,NC]
+
+RewriteRule  ^metalliceskie-stellazi$ /stellazhi-metall [L,R=301,NC]
+
+RewriteRule  ^mebel/st/palet$ /stellazhi-metall/palet [L,R=301,NC]
+
+RewriteRule  ^mebel/byh$ /mebel/buhgalterskie-shkafy [L,R=301,NC]
+
+RewriteRule  ^mebel/aptechka$ /mebel/pochtovye-yashchiki [L,R=301,NC]
+
+RewriteRule  ^teplovaya-tehnika/pushki$ /teplovaya-tehnika/teplovye-pushki [L,R=301,NC]
+
+RewriteRule  ^mebel/ins-v/instrument$ /mebel/ins-v/shkafy-dlya-instrumentov [L,R=301,NC]
+
+RewriteRule  ^ventilyaciya/ozink$ /ventilyaciya/vozduhovody-iz-ocinkovannoj-stali [L,R=301,NC]
+
+RewriteRule  ^mebel/ins-v/verstak$ /mebel/ins-v/metallicheskie-verstaki [L,R=301,NC]
+
+RewriteRule  ^montag/truby$ /montag/truby-i-izolyaciya-dlya-kondicionerov [L,R=301,NC]
+
+RewriteRule  ^teplo-pol/mat$ /teplo-pol/mat-dlya-teplogo-pola [L,R=301,NC]
+
+RewriteRule  ^elektriceskij-teplyj-pol?page=1&per-page=12$ /articles/teplyj-pol/elektriceskij-teplyj-pol [L,R=301,NC]
+
+RewriteRule  ^kondicionery/tip_invertornyj /kondicionery/tip_invertornye [L,R=301,NC]
+RewriteRule  ^teplo-pol/kabel-dla-obogreva-trub/tip_samoreguliruusij /teplo-pol/tip_samoreguliruusij [L,R=301,NC]
+RewriteRule  ^teplo-pol/pol/tip_rezistivnyj /teplo-pol/tip_rezistivnyj [L,R=301,NC] [L,R=301,NC]
+RewriteRule  ^teplo-pol/pol/tip_dvuzhilnyj /teplo-pol/tip_dvuzhilnyj [L,R=301,NC]
+RewriteRule  ^kondicionery/jax/klass_kolonnyj /kondicionery [L,R=301,NC]
+RewriteRule  ^teplo-pol/pol/tip_odnozhilnyj /teplo-pol/tip_odnozilnyj [L,R=301,NC]
+RewriteRule  ^teplo-pol/plenocnyj-infrakrasnyj-teplyj-pol/montazh_pod-linoleum /teplo-pol/montazh_pod-linoleum [L,R=301,NC]
+RewriteRule  ^teplo-pol/pol/tip_odnozilnyj /teplo-pol/tip_odnozilnyj [L,R=301,NC]
+RewriteRule  ^teplo-pol/plenocnyj-infrakrasnyj-teplyj-pol/tip_dvuzhilnyj /teplo-pol/tip_dvuzhilnyj [L,R=301,NC]
+RewriteRule  ^teplo-pol/plenocnyj-infrakrasnyj-teplyj-pol/tip_rezistivnyj /teplo-pol/tip_rezistivnyj [L,R=301,NC]
+RewriteRule  ^teplo-pol/plenocnyj-infrakrasnyj-teplyj-pol/tip_sterzhnevoj /teplo-pol/tip_sterznevoj [L,R=301,NC]
+RewriteRule  ^teplo-pol/plenocnyj-infrakrasnyj-teplyj-pol/tip_sterznevoj /teplo-pol/tip_sterznevoj [L,R=301,NC]
+RewriteRule  ^aktsii/aktsii-po-konditsioneram /akcii [L,R=301,NC]
+RewriteRule  ^kondicionery/ballu/klass_kassetnyj /kondicionery/ballu [L,R=301,NC]
+RewriteRule  ^kondicionery/ballu/klass_napolno-potolochnyj /kondicionery/ballu [L,R=301,NC]
+RewriteRule  ^kondicionery/hitachi/klass_split-sistemy /kondicionery/hitachi [L,R=301,NC]
+RewriteRule  ^kondicionery/mdv /kondicionery [L,R=301,NC]
+RewriteRule  ^kondicionery/mitsubishi/tip_invertornye /kondicionery/mitsubishi [L,R=301,NC]
+RewriteRule  ^kondicionery/montaz-kondicionerov/klass_split-sistemy /kondicionery/montaz-kondicionerov [L,R=301,NC]
+RewriteRule  ^kondicionery/montaz-kondicionerov/podklyuchenie-kabelya-k /kondicionery/montaz-kondicionerov [L,R=301,NC]
+RewriteRule  ^kondicionery/montaz-kondicionerov/prokladka-provoda-325-v /kondicionery/montaz-kondicionerov [L,R=301,NC]
+RewriteRule  ^kondicionery/montaz-kondicionerov/ustanovka-kronshtenjov-2 /kondicionery/montaz-kondicionerov [L,R=301,NC]
+RewriteRule  ^teplo-pol/mat-dlya-teplogo-pola/tip_odnozhilnyj /teplo-pol/mat-dlya-teplogo-pola [L,R=301,NC]
+RewriteRule  ^teplo-pol/tip_plenocnyj/asd /teplo-pol/tip_plenocnyj [L,R=301,NC]
+RewriteRule  ^tip_invertornye /kondicionery/tip_invertornye [L,R=301,NC]
+RewriteRule  ^tip_plenochnyj /teplo-pol/tip_plenocnyj [L,R=301,NC]
+
+
+
+
+RewriteRule  ^prais/$  [L,R=301,NC]
+
+
+RewriteRule  ^teplo-pol/mat/(.+)$           		/teplo-pol/mat-dlya-teplogo-pola/$1 				[L,R=301,NC]
+RewriteRule  ^montag/truby/(.+)$            		/montag/truby-i-izolyaciya-dlya-kondicionerov/$1 	[L,R=301,NC]
+RewriteRule  ^mebel/ins-v/verstak/(.+)$     		/mebel/ins-v/metallicheskie-verstaki/$1 			[L,R=301,NC]
+RewriteRule  ^ventilyaciya/ozink/(.+)$      		/ventilyaciya/vozduhovody-iz-ocinkovannoj-stali/$1  [L,R=301,NC]
+RewriteRule  ^mebel/ins-v/instrument/(.+)$     		/mebel/ins-v/shkafy-dlya-instrumentov/$1 			[L,R=301,NC]
+RewriteRule  ^teplovaya-tehnika/pushki/(.+)$      	/teplovaya-tehnika/teplovye-pushki/$1 				[L,R=301,NC]
+RewriteRule  ^mebel/aptechka/(.+)$      			/mebel/pochtovye-yashchiki/$1 						[L,R=301,NC]
+RewriteRule  ^mebel/byh/(.+)$      					/mebel/buhgalterskie-shkafy/$1 						[L,R=301,NC]
+
+
+RewriteRule  ^stellazhi-metall/stellazh-200$    	/stellazhi-metall/stellazh-archive 				[L,R=301,NC]
+RewriteRule  ^stellazhi-metall/stellas300$    		/stellazhi-metall/stellazh-garazh 				[L,R=301,NC]
+RewriteRule  ^stellazhi-metall/ctellach500$    		/stellazhi-metall/stellazh-sklad 					[L,R=301,NC]
+
+RewriteRule  ^stellazhi-metall/stellazh-200/(.+)$    	/stellazhi-metall/stellazh-archive/$1 				[L,R=301,NC]
+RewriteRule  ^stellazhi-metall/stellas300/(.+)$    		/stellazhi-metall/stellazh-garazh/$1 				[L,R=301,NC]
+RewriteRule  ^stellazhi-metall/ctellach500/(.+)$    	/stellazhi-metall/stellazh-sklad/$1 					[L,R=301,NC]
+
+
+RewriteRule ^admin/?(.{2,})?$ /backend/web/$1 [L,PT]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/].*)?$ /frontend/web/$1
