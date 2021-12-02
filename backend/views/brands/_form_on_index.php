@@ -1,6 +1,5 @@
 <?php
 
-use common\widgets\ckeditor\CkeditorMy;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -8,7 +7,7 @@ use yii\widgets\ActiveForm;
 
 <div class="portfolio-form">
 
-    <?php $form = ActiveForm::begin(['action' => '/icms/slider/create']); ?>
+    <?php $form = ActiveForm::begin(['action' => '/icms/brands/create']); ?>
 
     <div class="tabs-block">
 
@@ -17,13 +16,18 @@ use yii\widgets\ActiveForm;
                 <div id="data-modal-portfolio-main">
 
                     <div class="row">
-                        <div class="col-sm-12">
-                            <?= $form->field($model, 'name')->widget(CkeditorMy::class, []) ?>
+                        <div class="col-sm-7">
+                            <?= $form->field($model, 'name')->textInput() ?>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="pull-right pull-right-check">
+                                <?php echo $form->field($model, 'visibility', ['options' => ['class' => 'form-group cust-checkbox'], 'template' => '<label> {input} <span class="cust-checkbox__box"></span> Опубликовать</label>'])->checkbox([], false);  ?>
+                            </div>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-9">
+                        <div class="col-sm-3">
                             <?= $form->field($model, 'prev')->fileInput(['accept' => "image/jpeg, image/png"])->label('Изображение') ?>
                             <?php
                             $images[] = $model->getImage();
@@ -32,21 +36,6 @@ use yii\widgets\ActiveForm;
                             }
                             ?>
                         </div>
-                        <div class="col-sm-3">
-                            <div class="pull-right pull-right-check">
-                                <?php echo $form->field($model, 'visibility', ['options' => ['class' => 'form-group cust-checkbox'], 'template' => '<label> {input} <span class="cust-checkbox__box"></span> Опубликовать</label>'])->checkbox([], false);  ?>
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <?= $form->field($model, 'prev_mobile')->fileInput(['accept' => "image/jpeg, image/png"])->label('Изображение (мобильное)') ?>
-                            <?php
-                            $images[] = $model->getImage();
-                            if (!empty($images)) {
-                                print $this->render('../common/_view_images', compact('images', 'model'));
-                            }
-                            ?>
-                        </div>
-                        
                     </div>
 
                 </div>

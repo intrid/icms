@@ -3,17 +3,17 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\Slider;
-use common\models\search\SliderSearch;
+use common\models\Brands;
+use common\models\search\BrandsSearch;
 use kartik\grid\EditableColumnAction;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * SliderController implements the CRUD actions for Slider model.
+ * BrandsController implements the CRUD actions for Brands model.
  */
-class SliderController extends Controller
+class BrandsController extends Controller
 {
 
     public function behaviors()
@@ -31,7 +31,7 @@ class SliderController extends Controller
 
     public function actionIndex()
     {
-        $searchModel = new SliderSearch();
+        $searchModel = new BrandsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -49,7 +49,7 @@ class SliderController extends Controller
 
     public function actionCreate()
     {
-        $model = new Slider();
+        $model = new Brands();
 
         if ($model->load(Yii::$app->request->post())) {
 
@@ -111,7 +111,7 @@ class SliderController extends Controller
 
     protected function findModel($id)
     {
-        if (($model = Slider::findOne($id)) !== null) {
+        if (($model = Brands::findOne($id)) !== null) {
             return $model;
         }
 
@@ -123,7 +123,7 @@ class SliderController extends Controller
         return \yii\helpers\ArrayHelper::merge(parent::actions(), [
             'update-grid' => [ // identifier for your editable action
                 'class' => EditableColumnAction::className(), // action class name
-                'modelClass' => Slider::className(), // the update model class
+                'modelClass' => Brands::className(), // the update model class
                 'outputValue' => function ($model, $attribute, $key, $index) {
                     switch ($attribute) {
                         case 'visibility':

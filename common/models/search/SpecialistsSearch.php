@@ -4,10 +4,10 @@ namespace common\models\search;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Slider;
+use common\models\Specialists;
 
 
-class SliderSearch extends Slider
+class SpecialistsSearch extends Specialists
 {
 
     public function rules()
@@ -25,7 +25,7 @@ class SliderSearch extends Slider
 
     public function search($params)
     {
-        $query = Slider::find();
+        $query = Specialists::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -44,6 +44,7 @@ class SliderSearch extends Slider
 
         $query->andFilterWhere(['like', 'name', $this->name]);
         $query->andFilterWhere(['=', 'visibility', $this->visibility]);
+
 
         return $dataProvider;
     }

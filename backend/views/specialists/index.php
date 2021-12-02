@@ -8,24 +8,26 @@ use yii\helpers\Url;
 use backend\assets\BrandAsset;
 use common\components\MyComponent;
 use common\models\ArticleCategory;
+use common\models\Brands;
 use common\models\Design;
 use common\models\Geometry;
 use common\models\Slider;
+use common\models\Specialists;
 use kartik\editable\Editable;
 
 \kartik\select2\Select2Asset::register($this);
 
 
-$this->title = 'Слайдер';
+$this->title = 'Специалисты';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="brand-index">
     <div class="row">
-        <div class="col-sm-6 brand__tree">
+        <div class="col-sm-7 brand__tree">
             <div class="box">
                 <div class="box-header with-border">
                     <div style="float: left">
-                        <h3 class="box-title">Все слайды</h3>
+                        <h3 class="box-title">Все специалисты</h3>
                     </div>
                 </div>
                 <div class="box-body" id="box-body-tree" style="min-height: 600px; max-height: 600px; overflow: auto">
@@ -50,9 +52,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
                             [
                                 'attribute' => 'name',
-                                'format' => 'raw',
                                 'content' => function ($model) {
-                                    return $model->name;
+                                    return '<a href="' . Url::to(['update', 'id' => $model->id]) . '">' . $model->name . '</a>';
                                 }
                             ],
 
@@ -60,22 +61,22 @@ $this->params['breadcrumbs'][] = $this->title;
                                 'attribute' => 'visibility',
                                 'class' => '\kartik\grid\EditableColumn',
                                 'editableOptions' => [
-                                    'formOptions' => ['action' => ['/slider/update-grid']],
-                                    'header' => 'видимость',
-                                    'inputType' => Editable::INPUT_CHECKBOX,
-                                    'options' => [
-                                        'class' => 'new_class',
-                                        'label' => 'Опубликован',
-                                    ],
-                                    'pjaxContainerId' => 'pjax-table',
+                                  'formOptions' => ['action' => ['/specialists/update-grid']],
+                                  'header' => 'видимость',
+                                  'inputType' => Editable::INPUT_CHECKBOX,
+                                  'options' => [
+                                    'class' => 'new_class',
+                                    'label' => 'Опубликован',
+                                  ],
+                                  'pjaxContainerId' => 'pjax-table',
                                 ],
                                 'content' => function ($model) {
-                                    return $model::getListYesNo($model->visibility);
+                                  return $model::getListYesNo($model->visibility);
                                 },
                                 'format' => 'boolean',
-                                'filter' => Slider::getListYesNo(),
+                                'filter' => Specialists::getListYesNo(),
                                 'label' => 'Опубликован',
-                            ],
+                              ],
 
                             [
                                 'class' => 'yii\grid\ActionColumn',
@@ -87,14 +88,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
             </div>
         </div>
-        <div class="col-sm-5">
+        <div class="col-sm-4">
             <div class="ge-create">
                 <div class="row">
-                    <?php $modelNew = new Slider(); ?>
+                    <?php $modelNew = new Specialists(); ?>
                     <div class="box">
                         <div class="box-header with-border">
                             <div style="float: left">
-                                <h3 class="box-title">Новый слайд</h3>
+                                <h3 class="box-title">Новый специалист</h3>
                             </div>
                         </div>
                         <div class="box-body">
