@@ -24,13 +24,13 @@ AppAsset::register($this);
 	<?php $this->beginBody() ?>
 
 	<?= $this->render('_header'); ?>
+	<?= $this->render('_menu'); ?>
 
 	<main>
 		<?= $content; ?>
 	</main>
 
 	<?= $this->render('_footer'); ?>
-	<?= $this->render('_modals'); ?>
 
 	<?php $this->endBody() ?>
 </body>
