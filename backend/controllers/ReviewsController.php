@@ -7,6 +7,7 @@ use common\models\Reviews;
 use Yii;
 use common\models\Review;
 use common\models\search\ReviewsSearch;
+use kartik\grid\EditableColumnAction;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -71,7 +72,7 @@ class ReviewsController extends Controller
         $model->is_delete = 0;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->refresh();
+            return $this->redirect(['index']);
         }
 
         return $this->render('create', [
@@ -90,15 +91,28 @@ class ReviewsController extends Controller
     {
         $model = $this->findModel($id);
 
+        if ($model->created_at !== NULL) {
+            $model->created_at_str = date("d.m.Y h:i", $model->created_at);
+        }
+
         if ($model->load(Yii::$app->request->post())) {
 
-            if ($model->save()) {
-                return $this->refresh();
-            } else {
-                var_dump($model->getErrors());
-                exit;
+
+            $model->created_at = strtotime($model->created_at_str) ? strtotime($model->created_at_str) : NULL;
+
+            if (!empty($good)) {
+                $model->good_id = $good->id;
             }
 
+            if ($model->save()) {
+
+                return $this->refresh();
+            } else {
+                echo '<pre>';
+                var_dump($model->getErrors());
+                echo '</pre>';
+                exit;
+            }
 
             return $this->refresh();
         }
@@ -154,5 +168,24 @@ class ReviewsController extends Controller
         }
 
         return $this->redirect(Yii::$app->request->referrer);
+    }
+
+    
+    public function actions()
+    {
+        return \yii\helpers\ArrayHelper::merge(parent::actions(), [
+            'update-grid' => [ // identifier for your editable action
+                'class' => EditableColumnAction::className(), // action class name
+                'modelClass' => Reviews::className(), // the update model class
+                'outputValue' => function ($model, $attribute, $key, $index) {
+                    switch ($attribute) {
+                        case 'is_published':
+                            $result = $model::getListYesNo($model->$attribute);
+                            break;
+                    }
+                    return $result;
+                },
+            ]
+        ]);
     }
 }

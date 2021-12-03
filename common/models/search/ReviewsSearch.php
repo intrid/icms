@@ -18,8 +18,10 @@ class ReviewsSearch extends Reviews
     public function rules()
     {
         return [
-            [['id', 'user_id', 'created_at', 'updated_at', 'is_delete', 'good_id'], 'integer'],
+            [['id', 'created_at', 'updated_at', 'is_delete'], 'integer'],
             [['text'], 'safe'],
+            [['name'], 'safe'],
+            [['link'], 'safe'],
         ];
     }
 
@@ -63,12 +65,12 @@ class ReviewsSearch extends Reviews
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'is_delete' => $this->is_delete,
-            'user_id' => $this->user_id,
-            'good_id' => $this->good_id,
             'is_published' => $this->is_published
         ]);
 
         $query->andFilterWhere(['like', 'text', $this->text]);
+        $query->andFilterWhere(['like', 'name', $this->name]);
+        $query->andFilterWhere(['like', 'link', $this->link]);
 
         return $dataProvider;
     }

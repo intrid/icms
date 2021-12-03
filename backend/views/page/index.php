@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <h3 class="box-title"><?= $this->title ?></h3>
           </div>
           <div class="box-tools pull-right">
-              <p><?= Html::a('Добавить страницу', ['create'], ['class' => 'btn btn-flat btn-info']) ?></p>
+            <p><?= Html::a('Добавить страницу', ['create'], ['class' => 'btn btn-flat btn-info']) ?></p>
           </div>
         </div>
         <div class="box-body">
@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
               [
                 'attribute' => 'name',
                 'content' => function ($model) {
-                    return '<a href="' . Url::to(['update', 'id' => $model->id]) . '">' . $model->name . '</a>';
+                  return '<a href="' . Url::to(['update', 'id' => $model->id]) . '">' . $model->name . '</a>';
                 }
               ],
               [
@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'updated_at',
                 'format' => ['date', 'php:d.m.Y'],
               ],
-              
+
               [
                 'attribute' => 'visibility',
                 'class' => '\kartik\grid\EditableColumn',
@@ -69,9 +69,6 @@ $this->params['breadcrumbs'][] = $this->title;
               [
                 'class' => 'yii\grid\ActionColumn',
                 'template' => '{update}',
-                'visibleButtons' => [
-                  'delete' => Yii::$app->user->can('deletePage'),
-                ]
               ],
             ],
           ]);
