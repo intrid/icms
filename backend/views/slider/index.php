@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="brand-index">
     <div class="row">
-        <div class="col-sm-6 brand__tree">
+        <div class="col-sm-7 brand__tree">
             <div class="box">
                 <div class="box-header with-border">
                     <div style="float: left">
@@ -87,7 +87,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
             </div>
         </div>
-        <div class="col-sm-5">
+        <div class="col-sm-4">
             <div class="ge-create">
                 <div class="row">
                     <?php $modelNew = new Slider(); ?>

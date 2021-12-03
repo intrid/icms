@@ -23,7 +23,7 @@ use yii\widgets\ActiveForm;
             <div id="panel-portfolio-1" class="tab-pane fade in active">
                 <div id="data-modal-portfolio-main">
 
-                <div class="row">
+                    <div class="row">
                         <div class="col-sm-12">
                             <?= $form->field($model, 'name')->widget(CkeditorMy::class, []) ?>
                         </div>
@@ -31,11 +31,11 @@ use yii\widgets\ActiveForm;
 
                     <div class="row">
                         <div class="col-sm-9">
-                            <?= $form->field($model, 'prev')->fileInput(['accept' => "image/jpeg, image/png"])->label('Изображение') ?>
+                            <?= $form->field($model, 'prev')->fileInput(['accept' => "image/jpeg, image/png"])->label('Изображение (1920x488)') ?>
                             <?php
-                            $images[] = $model->getImage();
-                            if (!empty($images)) {
-                                print $this->render('../common/_view_images', compact('images', 'model'));
+                            $image = $model->getImageByName('slider_desktop');
+                            if (!empty($image)) {
+                                print $this->render('../common/_view_image', compact('image', 'model'));
                             }
                             ?>
                         </div>
@@ -45,15 +45,24 @@ use yii\widgets\ActiveForm;
                             </div>
                         </div>
                         <div class="col-sm-12">
-                            <?= $form->field($model, 'prev_mobile')->fileInput(['accept' => "image/jpeg, image/png"])->label('Изображение (мобильное)') ?>
+                            <?= $form->field($model, 'prev_tablet')->fileInput(['accept' => "image/jpeg, image/png"])->label('Изображение (1280x488)') ?>
                             <?php
-                            $images[] = $model->getImage();
-                            if (!empty($images)) {
-                                print $this->render('../common/_view_images', compact('images', 'model'));
+                            $image = $model->getImageByName('slider_tablet');
+                            if (!empty($image)) {
+                                print $this->render('../common/_view_image', compact('image', 'model'));
                             }
                             ?>
                         </div>
-                        
+                        <div class="col-sm-12">
+                            <?= $form->field($model, 'prev_mobile')->fileInput(['accept' => "image/jpeg, image/png"])->label('Изображение (768x378)') ?>
+                            <?php
+                            $image = $model->getImageByName('slider_mobile');
+                            if (!empty($image)) {
+                                print $this->render('../common/_view_image', compact('image', 'model'));
+                            }
+                            ?>
+                        </div>
+
                     </div>
 
                 </div>
@@ -67,5 +76,4 @@ use yii\widgets\ActiveForm;
 
     <?php ActiveForm::end(); ?>
 
-</div>
 </div>

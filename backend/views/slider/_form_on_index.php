@@ -24,13 +24,7 @@ use yii\widgets\ActiveForm;
 
                     <div class="row">
                         <div class="col-sm-9">
-                            <?= $form->field($model, 'prev')->fileInput(['accept' => "image/jpeg, image/png"])->label('Изображение') ?>
-                            <?php
-                            $images[] = $model->getImage();
-                            if (!empty($images)) {
-                                print $this->render('../common/_view_images', compact('images', 'model'));
-                            }
-                            ?>
+                            <?= $form->field($model, 'prev')->fileInput(['accept' => "image/jpeg, image/png"])->label('Изображение (1920x488)') ?>
                         </div>
                         <div class="col-sm-3">
                             <div class="pull-right pull-right-check">
@@ -38,15 +32,11 @@ use yii\widgets\ActiveForm;
                             </div>
                         </div>
                         <div class="col-sm-12">
-                            <?= $form->field($model, 'prev_mobile')->fileInput(['accept' => "image/jpeg, image/png"])->label('Изображение (мобильное)') ?>
-                            <?php
-                            $images[] = $model->getImage();
-                            if (!empty($images)) {
-                                print $this->render('../common/_view_images', compact('images', 'model'));
-                            }
-                            ?>
+                            <?= $form->field($model, 'prev_tablet')->fileInput(['accept' => "image/jpeg, image/png"])->label('Изображение (1280x488)') ?>
                         </div>
-                        
+                        <div class="col-sm-12">
+                            <?= $form->field($model, 'prev_mobile')->fileInput(['accept' => "image/jpeg, image/png"])->label('Изображение (768x378)') ?>
+                        </div>
                     </div>
 
                 </div>

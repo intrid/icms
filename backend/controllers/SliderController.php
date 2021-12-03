@@ -54,11 +54,24 @@ class SliderController extends Controller
         if ($model->load(Yii::$app->request->post())) {
 
             $prev = \yii\web\UploadedFile::getInstance($model, 'prev');
+            $prev_tablet = \yii\web\UploadedFile::getInstance($model, 'prev_tablet');
+            $prev_mobile = \yii\web\UploadedFile::getInstance($model, 'prev_mobile');
+
             if ($model->save()) {
 
                 $model->prev = $prev;
                 if (!empty($model->prev)) {
                     $model->uploadImgPrev();
+                }
+
+                $model->prev_tablet = $prev_tablet;
+                if (!empty($model->prev_tablet)) {
+                    $model->uploadImgPrevTablet();
+                }
+
+                $model->prev_mobile = $prev_mobile;
+                if (!empty($model->prev_mobile)) {
+                    $model->uploadImgPrevMobile();
                 }
 
                 return $this->redirect(['index']);
@@ -80,11 +93,24 @@ class SliderController extends Controller
         if ($model->load(Yii::$app->request->post())) {
 
             $prev = \yii\web\UploadedFile::getInstance($model, 'prev');
+            $prev_tablet = \yii\web\UploadedFile::getInstance($model, 'prev_tablet');
+            $prev_mobile = \yii\web\UploadedFile::getInstance($model, 'prev_mobile');
+
             if ($model->save()) {
 
                 $model->prev = $prev;
                 if (!empty($model->prev)) {
                     $model->uploadImgPrev();
+                }
+
+                $model->prev_tablet = $prev_tablet;
+                if (!empty($model->prev_tablet)) {
+                    $model->uploadImgPrevTablet();
+                }
+
+                $model->prev_mobile = $prev_mobile;
+                if (!empty($model->prev_mobile)) {
+                    $model->uploadImgPrevMobile();
                 }
 
                 return $this->redirect(['index']);
@@ -116,6 +142,25 @@ class SliderController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+
+    /**
+     * Удаление изображения
+     */
+    public function actionImageDelete()
+    {
+        $get = Yii::$app->request->get();
+        $model = Slider::find()->where(['id' => $get['id_model']])->limit(1)->one();
+
+        foreach ($model->getImages() as $image) {
+            if ($image->id == $get['id_img']) {
+                $model->removeImage($image);
+                break;
+            }
+        }
+
+        return $this->redirect(Yii::$app->request->referrer);
     }
 
     public function actions()

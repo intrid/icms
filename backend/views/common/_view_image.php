@@ -15,7 +15,7 @@ use yii\helpers\Url;
                     ) ?>
                 </span>
                 <a href="<?= $image->getPath() ?>" data-rel="lightcase:g">
-                    <?= Html::img($image->getPath('220x220')); ?>
+                    <?= Html::img($image->getPath('220x')); ?>
                 </a>
             </div>
         <?php endif; ?>

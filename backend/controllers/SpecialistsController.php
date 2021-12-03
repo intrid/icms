@@ -118,6 +118,24 @@ class SpecialistsController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
+    /**
+     * Удаление изображения
+     */
+    public function actionImageDelete()
+    {
+        $get = Yii::$app->request->get();
+        $model = Specialists::find()->where(['id' => $get['id_model']])->limit(1)->one();
+
+        foreach ($model->getImages() as $image) {
+            if ($image->id == $get['id_img']) {
+                $model->removeImage($image);
+                break;
+            }
+        }
+
+        return $this->redirect(Yii::$app->request->referrer);
+    }
+
     public function actions()
     {
         return \yii\helpers\ArrayHelper::merge(parent::actions(), [
