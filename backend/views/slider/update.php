@@ -2,9 +2,9 @@
 
 use yii\helpers\Html;
 
-$this->title = 'Редактирование: ' . $model->name;
+$this->title = 'Редактирование: ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Слайдер', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->name];
+$this->params['breadcrumbs'][] = ['label' => $model->id];
 ?>
 
 <div class="ge-create">

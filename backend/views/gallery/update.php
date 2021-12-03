@@ -2,21 +2,22 @@
 
 use yii\helpers\Html;
 
-$this->title = 'Редактирование галереи ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Галереи', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $model->name;
+$this->title = 'Редактирование: ' . $model->name;
+$this->params['breadcrumbs'][] = ['label' => 'Фото', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->name];
 ?>
-<div class="article-update">
-	<div class="row">
-		<div class="col-sm-10">
+
+<div class="ge-create">
+    <div class="row">
+		<div class="col-sm-6">
 			<div class="box">
 				<div class="box-header with-border">
 					<div style="float: left">
-						<h3 class="box-title"><?= $this->title;?></h3>
+						<h3 class="box-title"><?= Html::encode($this->title) ?></h3>
 					</div>
 				</div>
 				<div class="box-body">
-				<?= $this->render('_form', ['model' => $model]) ?>
+					<?= $this->render('_form', ['model' => $model]) ?>
 				</div>
 			</div>
 		</div>

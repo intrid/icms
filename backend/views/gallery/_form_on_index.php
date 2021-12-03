@@ -7,17 +7,10 @@ use yii\widgets\ActiveForm;
 
 <div class="portfolio-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['action' => '/icms/gallery/create']); ?>
 
     <div class="tabs-block">
-        <ul class="tabs-list clearfix">
-            <li class="active">
-                <a data-toggle="tab" href="#panel-portfolio-1">
-                    <span>Основные параметры</span>
-                </a>
-            </li>
 
-        </ul>
         <div class="tab-content">
             <div id="panel-portfolio-1" class="tab-pane fade in active">
                 <div id="data-modal-portfolio-main">
@@ -51,7 +44,7 @@ use yii\widgets\ActiveForm;
         </div>
     </div>
     <div class="form-group text-right">
-        <?= Html::submitButton('Сохранить', ['class' => 'btn btn-info']) ?>
+        <?= Html::submitButton('Добавить', ['class' => 'btn btn-info']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

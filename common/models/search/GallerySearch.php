@@ -19,7 +19,6 @@ class GallerySearch extends Gallery
     {
         return [
             [['name'], 'safe'],
-            [['slug'], 'safe'],
             [['visibility'], 'integer'],
         ];
     }
@@ -55,7 +54,6 @@ class GallerySearch extends Gallery
         }
 
         $query->andFilterWhere(['like', 'name', $this->name]);
-        $query->andFilterWhere(['like', 'slug', $this->name]);
         $query->andFilterWhere(['=', 'visibility', $this->visibility]);
 
         return $dataProvider;
