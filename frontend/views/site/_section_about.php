@@ -1,37 +1,19 @@
 <section class="about">
-	<div class="content">
-		<h2><?= Yii::$app->settings->get('Settings.the_title_of_the_text_about_the_company') ?></h2>
-		<div><?= Yii::$app->settings->get('Settings.the_text_about_the_company_one') ?></div>
-		<article class="advantages">
-			<h3 class="visually-hidden">Преимущества</h3>
-			<div class="advantages-block advantages__item">
-				<abbr class="advantages-block__icon">&#xe905;</abbr>
-				<p class="advantages-block__text">
-					<b>Ассортимент:</b>
-					<br>Свыше 25000 товаров в наличии на складе.
-				</p>
-			</div>
-			<div class="advantages-block advantages__item">
-				<abbr class="advantages-block__icon">&#xe90a;</abbr>
-				<p class="advantages-block__text">
-					<b>Актуальность:</b>
-					<br>Среди наших товаров современные промышленные решения и новинки производства.
-				</p>
-			</div>
-			<div class="advantages-block advantages__item">
-				<abbr class="advantages-block__icon">&#xe901;</abbr>
-				<p class="advantages-block__text">
-					<b>Индивидуальный подход:</b>
-					<br>Для частных лиц, постоянных клиентов, предпреятий, ИП.
-				</p>
-			</div>
-			<div class="advantages-block advantages__item">
-				<abbr class="advantages-block__icon">&#xe906;</abbr>
-				<p class="advantages-block__text">
-					<b>Опыт:</b>
-					<br>Работаем с 2003 года.
-				</p>
-			</div>
-		</article>
+	<div class="about__content">
+		<h1 class="about__title">Оптика и офтальмология<br>в Воронеже</h1>
+		<p class="about__text">Прием врача-офтальмолога для подбора сложной и индивидуальной коррекции:</p>
+		<ul>
+			<li>ортокератология</li>
+			<li>призматическая коррекция</li>
+			<li>иррегулярный астигматизм (при кератоконусе, рубцах роговицы, после травм и оперативных
+				вмешательств).</li>
+		</ul>
+		<p class="about__text">Приём офтальмолога осуществляется по предварительной записи по тел. <a href="tel:+7(473)3003677">+7 (473) 300-36-77</a></p>
+		<p class="about__text">Подбор и изготовление средств коррекции всех типов зрительных нарушений. В
+			зависимости от сложности подбор может осуществляться как врачом-офтальмологом, так и медицинским
+			оптиком-оптометристом.</p>
+		<p class="about__text">Подбор очков и контактных линз при миопии, гиперметропии, пресбиопии,
+			астигматизме может осуществляться без предварительной записи, при наличии свободных специалистов.
+		</p>
 	</div>
 </section>
