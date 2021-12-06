@@ -32,6 +32,7 @@ class Slider extends AppModel
         return [
             [['name'], 'required'],
             [['name'], 'string'],
+            [['class'], 'string'],
             [['visibility'], 'integer'],
             [['prev'], 'file', 'skipOnEmpty' => true, 'extensions' => ['jpg', 'png', 'jpeg'], 'maxFiles' => 1],
             [['prev_mobile'], 'file', 'skipOnEmpty' => true, 'extensions' => ['jpg', 'png', 'jpeg'], 'maxFiles' => 1],

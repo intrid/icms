@@ -6,7 +6,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => Yii::$app->settings->
 
 ?>
 
-<?= $this->render('_slider'); ?>
+<?= $this->render('_slider', compact('slides')); ?>
 <?= $this->render('_form'); ?>
 
 <?= $this->render('_section_about'); ?>

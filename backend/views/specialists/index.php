@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <h3 class="box-title">Все специалисты</h3>
                     </div>
                 </div>
-                <div class="box-body" id="box-body-tree" style="min-height: 600px; max-height: 600px; overflow: auto">
+                <div class="box-body" id="box-body-tree" style="min-height: 700px; max-height: 600px; overflow: auto">
                     <?=
                     GridView::widget([
                         'dataProvider' => $dataProvider,

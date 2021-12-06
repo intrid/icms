@@ -159,39 +159,6 @@ class SubmitController extends AppController{
         } else {
             return ['status' => false];
         }
-
-        /** 
-
-            if (!empty($post['telephone'])) {
-                if (empty($post['g-recaptcha-response'])) {
-                    return [
-                        'title' => 'Капча введена не верно'
-                    ];
-                }
-                if ($this->reGoogle($post['g-recaptcha-response'])->success != 1) {
-                    return [
-                        'title' => 'Капча введена не верно. Обновите страницу.'
-                    ];
-                }
-                $message = '';
-                $textNull = "не указано";
-                $message .= !empty($post['contact_lico']) ? '<p><b>Контактное лицо: </b>' . htmlspecialchars($post['contact_lico'], ENT_QUOTES) . '</p>' : '<p><b>Контактное лицо: </b>' . $textNull . '</p>';
-                $message .= !empty($post['organization']) ? '<p><b>Организация: </b>' . htmlspecialchars($post['organization'], ENT_QUOTES) . '</p>' : '<p><b>Организация: </b>' . $textNull . '</p>';
-                $message .= !empty($post['email']) ? '<p><b>Электронный адрес: </b>' . htmlspecialchars($post['email'], ENT_QUOTES) . '</p>' : '<p><b>Электронный адрес: </b>' . $textNull . '</p>';
-                $message .= '<p><b>Телефон: </b>' . htmlspecialchars($post['telephone'], ENT_QUOTES) . '</p>';
-                $message .= !empty($post['text']) ? '<p><b>Сообщение: </b>' . htmlspecialchars($post['text'], ENT_QUOTES) . '</p>' : '<p><b>Сообщение: </b>' . $textNull . '</p>';
-
-                
-                return [
-                    'title' => 'Ваше сообщение отправлено!',
-                ];
-            } else {
-                return [
-                    'title' => 'Пожалуйста, введите номер телефона!'
-                ];
-            }
-
-        */
     }
 
     private function reGoogle($p) {
@@ -323,4 +290,5 @@ class SubmitController extends AppController{
 
         return $response;
     }
+
 }

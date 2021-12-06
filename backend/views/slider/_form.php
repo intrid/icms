@@ -30,7 +30,7 @@ use yii\widgets\ActiveForm;
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-9">
+                        <div class="col-sm-3">
                             <?= $form->field($model, 'prev')->fileInput(['accept' => "image/jpeg, image/png"])->label('Изображение (1920x488)') ?>
                             <?php
                             $image = $model->getImageByName('slider_desktop');
@@ -39,6 +39,11 @@ use yii\widgets\ActiveForm;
                             }
                             ?>
                         </div>
+                        <div class="col-sm-6">
+
+                        <?= $form->field($model, 'class')->textInput() ?>
+                        </div>
+
                         <div class="col-sm-3">
                             <div class="pull-right pull-right-check">
                                 <?php echo $form->field($model, 'visibility', ['options' => ['class' => 'form-group cust-checkbox'], 'template' => '<label> {input} <span class="cust-checkbox__box"></span> Опубликовать</label>'])->checkbox([], false);  ?>

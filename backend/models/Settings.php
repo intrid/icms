@@ -23,6 +23,8 @@ class Settings extends Model {
     public $social_three;
     public $social_four;
     public $address_place;
+    public $yandex_score;
+    public $yandex_link;
 
 
     /* SMTP */
@@ -100,6 +102,8 @@ class Settings extends Model {
                     'social_three',
                     'social_four',
                     'address_place',
+                    'yandex_score',
+                    'yandex_link',
                 ], 
                 'string'
             ],
@@ -145,6 +149,8 @@ class Settings extends Model {
             'social_three' => 'Инстаграм',
             'social_four' => 'Ютуб',
             'address_place' => 'Адрес',
+            'yandex_score' => 'Числовая оценка отзывов',
+            'yandex_link' => 'Ссылка на отзывы',
         ];
     }
 }

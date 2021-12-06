@@ -34,8 +34,11 @@ use yii\widgets\ActiveForm;
                         <div class="col-sm-12">
                             <?= $form->field($model, 'prev_tablet')->fileInput(['accept' => "image/jpeg, image/png"])->label('Изображение (1280x488)') ?>
                         </div>
-                        <div class="col-sm-12">
+                        <div class="col-sm-7">
                             <?= $form->field($model, 'prev_mobile')->fileInput(['accept' => "image/jpeg, image/png"])->label('Изображение (768x378)') ?>
+                        </div>
+                        <div class="col-sm-5">
+                            <?= $form->field($model, 'class')->textInput() ?>
                         </div>
                     </div>
 

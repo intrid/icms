@@ -73,10 +73,12 @@ $this->registerJsFile("@web/js/site/index.js");
                                         <div class="col-sm-6">
                                             <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
                                             <?= $form->field($model, 'address_place')->textInput(['maxlength' => true]) ?>
+                                            <?= $form->field($model, 'yandex_score')->textInput(['maxlength' => true]) ?>
                                         </div>
                                         <div class="col-sm-6">
                                             <?= $form->field($model, 'phone_one')->textInput(['maxlength' => true]) ?>
                                             <?= $form->field($model, 'map_city_one')->textInput(['maxlength' => true]) ?>
+                                            <?= $form->field($model, 'yandex_link')->textInput(['maxlength' => true]) ?>
                                         </div>
                                     </div>
                                 </div>
