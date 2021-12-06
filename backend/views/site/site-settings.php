@@ -80,6 +80,9 @@ $this->registerJsFile("@web/js/site/index.js");
                                             <?= $form->field($model, 'map_city_one')->textInput(['maxlength' => true]) ?>
                                             <?= $form->field($model, 'yandex_link')->textInput(['maxlength' => true]) ?>
                                         </div>
+                                        <div class="col-sm-12">
+                                            <?= $form->field($model, 'advantages')->widget(CkeditorMy::class, []) ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

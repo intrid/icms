@@ -2,7 +2,7 @@
 
 use common\models\Reviews;
 
-$reviews = Reviews::find(['visibility' => 1])->all();
+$reviews = Reviews::find(['visibility' => 1])->orderBy('created_at DESC')->all();
 
 ?>
 
@@ -25,7 +25,7 @@ $reviews = Reviews::find(['visibility' => 1])->all();
 								<p class="reviews-slider__text">
 									<?= $review->text?>
 								</p>
-								<a href="<?= $review->link?>" class="reviews-slider__link" aria-label="Перейти к отзыву"></a>
+								<a href="<?= !empty($review->link) ? $review->link : "#"?>" class="reviews-slider__link" aria-label="Перейти к отзыву"></a>
 							</blockquote>
 						<?php endforeach; ?>
 					<?php endif; ?>

@@ -1,12 +1,23 @@
+<?php
+
+use common\models\Gallery;
+
+$photos = Gallery::find(['visibility' => 1])->orderBy('id DESC')->all();
+
+?>
+
 <section class="our">
 	<h2>Салон оптики в Воронеже</h2>
 	<div class="our__slider">
 		<div class="swiper our-slider">
 			<div class="swiper-wrapper">
-				<div data-src="/img/our-1.jpg" class="swiper-slide our-slider__slide" data-fancybox><img src="/img/our-1.jpg" alt=""></div>
-				<div data-src="/img/our-2.jpg" class="swiper-slide our-slider__slide" data-fancybox><img src="/img/our-2.jpg" alt=""></div>
-				<div data-src="/img/our-3.jpg" class="swiper-slide our-slider__slide" data-fancybox><img src="/img/our-3.jpg" alt=""></div>
-				<div data-src="/img/our-4.jpg" class="swiper-slide our-slider__slide" data-fancybox><img src="/img/our-4.jpg" alt=""></div>
+				<?php if (!empty($photos)) : ?>
+					<?php foreach ($photos as $photo) : ?>
+						<div data-src="<?= $photo->getImage()->getPathToOrigin() ?>" class="swiper-slide our-slider__slide" data-fancybox>
+							<img src="<?= $photo->getImage()->getPath('470x') ?>" alt="<?= $photo->name ?>">
+						</div>
+					<?php endforeach; ?>
+				<?php endif; ?>
 			</div>
 		</div>
 		<div class="swiper-controls">

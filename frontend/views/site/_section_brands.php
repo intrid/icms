@@ -2,7 +2,7 @@
 
 use common\models\Brands;
 
-$brands = Brands::find(['visibility' => 1])->all();
+$brands = Brands::find(['visibility' => 1])->orderBy('id DESC')->all();
 
 ?>
 <section class="brands">

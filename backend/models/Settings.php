@@ -25,7 +25,8 @@ class Settings extends Model {
     public $address_place;
     public $yandex_score;
     public $yandex_link;
-
+    public $advantages;
+    public $services;
 
     /* SMTP */
     public $smtp_username;
@@ -104,6 +105,8 @@ class Settings extends Model {
                     'address_place',
                     'yandex_score',
                     'yandex_link',
+                    'advantages',
+                    'services',
                 ], 
                 'string'
             ],
@@ -151,6 +154,8 @@ class Settings extends Model {
             'address_place' => 'Адрес',
             'yandex_score' => 'Числовая оценка отзывов',
             'yandex_link' => 'Ссылка на отзывы',
+            'advantages' => 'Блок преимуществ на главной',
+            'services' => 'Блок услуг на главной'
         ];
     }
 }
