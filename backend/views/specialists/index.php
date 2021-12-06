@@ -53,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             [
                                 'attribute' => 'name',
                                 'content' => function ($model) {
-                                    return '<a href="' . Url::to(['update', 'id' => $model->id]) . '">' . $model->name . '</a>';
+                                    return '<a href="' . Url::to(['update', 'id' => $model->id]) . '">' . $model->name . '</a> <br>' . $model->position;
                                 }
                             ],
 

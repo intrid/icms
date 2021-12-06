@@ -9,7 +9,7 @@ $this->params['breadcrumbs'][] = ['label' => $model->name];
 
 <div class="ge-create">
     <div class="row">
-		<div class="col-sm-6">
+		<div class="col-sm-8">
 			<div class="box">
 				<div class="box-header with-border">
 					<div style="float: left">

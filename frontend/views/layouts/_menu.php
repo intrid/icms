@@ -34,8 +34,8 @@
 			<p class="address__item"><span class="address__week">Сб</span> с <time>10:00</time> до
 				<time>16:00</time>
 			</p>
-		</div><a href="tel:+74733003677" class="phone phone--footer menu-bottom__item"><span class="phone__number">+
-				7 (473) 300 36 77</span></a>
-	</footer><a href="tel:+74733003677" class="phone phone--header menu__phone"><span class="phone__number">+ 7
-			(473) 300 36 77</span></a>
+		</div>
+		<a href="tel:+74733003677" class="phone phone--footer menu-bottom__item"><span class="phone__number">+7 (473) 300 36 77</span></a>
+	</footer>
+	<a href="tel:+74733003677" class="phone phone--header menu__phone"><span class="phone__number">+ 7 (473) 300 36 77</span></a>
 </div>

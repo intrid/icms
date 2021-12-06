@@ -26,7 +26,7 @@ $this->registerJsFile("@web/js/site/index.js");
 
 <div class="site-index" xmlns="http://www.w3.org/1999/html">
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-10">
             <div class="box">
                 <div class="box-header with-border">
                     <div style="float: left">
@@ -107,7 +107,7 @@ $this->registerJsFile("@web/js/site/index.js");
                             <div id="panel-settings-agreement" class="tab-pane fade">
                                 <div id="data-modal-settings-agreement">
                                     <div class="row">
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-6">
                                             <?= $form->field($model, 'domain')->textInput(); ?>
                                             <?= $form->field($model, 'org_name')->textInput(); ?>
                                             <?= $form->field($model, 'org_address')->textInput(); ?>

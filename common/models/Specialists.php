@@ -29,7 +29,11 @@ class Specialists extends AppModel
     {
         return [
             [['name'], 'required'],
+            [['description'], 'required'],
+            [['position'], 'string', 'max' => 255],
+            [['work_date'], 'string', 'max' => 255],
             [['name'], 'string', 'max' => 255],
+            [['description'], 'string'],
             [['visibility'], 'integer'],
             [['prev'], 'file', 'skipOnEmpty' => true, 'extensions' => ['jpg', 'png', 'jpeg'], 'maxFiles' => 1],
 
@@ -41,6 +45,9 @@ class Specialists extends AppModel
         return [
             'id' => 'ID',
             'name' => 'Наименование',
+            'position' => 'Должность',
+            'work_date' => 'Врачебный стаж',
+            'description' => 'Описание',
             'visibility' => 'Опубликовать',
         ];
     }
