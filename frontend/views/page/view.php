@@ -1,5 +1,9 @@
 <?php
 
+if(empty($model->title)){
+	$this->title == $model->name;
+}
+
 $text = $model->text_one;
 $class = 'brands--no-decor';
 
