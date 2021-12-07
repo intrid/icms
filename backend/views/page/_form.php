@@ -76,8 +76,8 @@ $modelName = "page";
                 <div id="data-modal">
                     <div class="row">
                         <div class="col-sm-6">
-                            <?= $form->field($model, 'h1')->textInput(['maxlength' => true, 'onkeyup' => 'myVar.lenghtChar(this)']) ?>
-                            <span class="coiuntCharPr">Кол-во символов: <span data-count-lenght='<?= $modelName?>-h1'><?= mb_strlen($model->h1)?></span></span>
+                            <!-- <?= $form->field($model, 'h1')->textInput(['maxlength' => true, 'onkeyup' => 'myVar.lenghtChar(this)']) ?>
+                            <span class="coiuntCharPr">Кол-во символов: <span data-count-lenght='<?= $modelName?>-h1'><?= mb_strlen($model->h1)?></span></span> -->
                             <?= $form->field($model, 'title')->textInput(['maxlength' => true, 'onkeyup' => 'myVar.lenghtChar(this)']) ?>
                             <span class="coiuntCharPr">Кол-во символов: <span data-count-lenght='<?= $modelName?>-title'><?= mb_strlen($model->title)?></span></span>
                             <?= $form->field($model, 'slug')->textInput(['maxlength' => true, 'onkeyup' => 'myVar.lenghtChar(this)']) ?>

@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => $model->name];
 ?>
 <div class="page-update">
     <div class="row">
-		<div class="col-sm-10">
+		<div class="col-sm-11">
 			<div class="box">
 				<div class="box-header with-border">
 					<div style="float: left">

@@ -71,7 +71,11 @@ class ReviewsController extends Controller
 
         $model->is_delete = 0;
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+
+            $model->created_at = strtotime($model->created_at_str) ? strtotime($model->created_at_str) : NULL;
+            $model->save();
+            
             return $this->redirect(['index']);
         }
 
@@ -92,7 +96,7 @@ class ReviewsController extends Controller
         $model = $this->findModel($id);
 
         if ($model->created_at !== NULL) {
-            $model->created_at_str = date("d.m.Y h:i", $model->created_at);
+            $model->created_at_str = date("d.m.Y", $model->created_at);
         }
 
         if ($model->load(Yii::$app->request->post())) {

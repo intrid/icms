@@ -65,7 +65,7 @@ $config = [
                 '/polytic' => 'site/agreement',
                 '/logout' => '/user/default/logout',
 
-                'page/<slug>' => 'page/view',
+                '<slug>' => 'page/view',
 
                 [
                     'class' => \frontend\component\PageRule::class,

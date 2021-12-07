@@ -1,5 +1,6 @@
 <?php
 
+use kartik\date\DatePicker;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\select2\Select2;
@@ -27,21 +28,21 @@ use kartik\datetime\DateTimePicker;
 
                     <div class="col-sm-9">
 
-                        <div class="col-lg-4">
+                        <div class="col-lg-5">
                             <?= $form->field($model, 'name')->textInput(); ?>
                         </div>
 
-                        <div class="col-lg-4">
+                        <div class="col-lg-5">
                             <?= $form->field($model, 'link')->textInput();; ?>
                         </div>
 
-                        <div class="col-sm-3">
-                            <?= $form->field($model, 'created_at_str')->widget(DateTimePicker::classname(), [
+                        <div class="col-sm-2">
+                            <?= $form->field($model, 'created_at_str')->widget(DatePicker::classname(), [
                                 'options' => ['placeholder' => 'Введите время ...'],
                                 'pluginOptions' => [
                                     'convertFormat' => true,
                                     'autoclose' => true,
-                                    'format' => 'dd.mm.yyyy hh:ii',
+                                    'format' => 'd.m.yyyy',
                                     'language' => 'ru',
                                     'weekStart' => 1, //неделя начинается с понедельника
                                     'todayBtn' => true, //снизу кнопка "сегодня"

@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\components\MyHelper;
 use Yii;
 use yii\filters\VerbFilter;
 use common\models\City;
@@ -17,74 +18,76 @@ use yii\web\Response;
 use yii\helpers\Url;
 use yii\helpers\Html;
 
-class SubmitController extends AppController{
+class SubmitController extends AppController
+{
 
     use \common\components\TraitRequest;
 
     public $footer_polytic = 'Нажимая кнопку, Вы даете свое согласие на <a href="/polytic" target="_blank">обработку персональных данных</a>';
 
 
-    public function actionModal() 
+    public function actionModal()
     {
         //Скорее всего зашёл робот или сканер, нужно ему что-нибудь отдать
-        if ( Yii::$app->request->isGet ) {
+        if (Yii::$app->request->isGet) {
             $response = Yii::$app->response;
-            $response->setStatusCode( 200 );
+            $response->setStatusCode(200);
 
             return $response;
         }
 
         $post = $this->setAjaxRequest();
 
-        $modal = substr( $post['modal'], 1 );
+        $modal = substr($post['modal'], 1);
         $data = [];
 
-        switch ( $modal ) {
+        switch ($modal) {
             case 'auth':
                 $model = new LoginForm();
                 $data['status'] = true;
                 $data['header'] = "Авторизация";
                 $data['text'] = $this->renderAjax('/short/_aout', ['model' => $model]);
-                $data ['footer'] = '';
-            break;
+                $data['footer'] = '';
+                break;
             case 'modal-reg':
                 $modal = new SignupForm();
                 $data['status'] = true;
                 $data['header'] = "Регистрация";
                 $data['text'] = $this->renderPartial('/short/_reg', ['model' => $modal, 'footer' => $this->footer_polytic]);
-            break;
+                break;
             case 'req-pasw':
                 $model = new PasswordResetRequestForm();
                 $data['status'] = true;
                 $data['header'] = "Восстановление пароля";
                 $data['text'] = $this->renderPartial('/short/_recovery', ['model' => $model]);
-                $data ['footer'] = $this->footer_polytic;
-            break;
+                $data['footer'] = $this->footer_polytic;
+                break;
             case 'review':
                 $model = new CommentForm(1);
                 $data['status'] = true;
                 $data['header'] = 'Оставить отзыв';
                 $data['text'] = $this->renderAjax('/short/_comment', ['model' => $model]);
-                $data ['footer'] = $this->footer_polytic;
-            break;
+                $data['footer'] = $this->footer_polytic;
+                break;
 
-            case "feedback" :
+            case "feedback":
                 $model = new FeedbackForm();
                 $data['status'] = true;
                 $data['header'] = 'Заказать звонок';
                 $data['text'] = $this->renderAjax('/short/_feedback', ['model' => $model]);
 
-            break;
+                break;
         }
 
         return $data;
     }
 
-    public function actionCallback(){
+    public function actionCallback()
+    {
         //Скорее всего зашёл робот или сканер, нужно ему что-нибудь отдать
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 
-        if ( Yii::$app->request->isPost && Yii::$app->request->isAjax) {
+        if (Yii::$app->request->isPost && Yii::$app->request->isAjax) {
 
 
 
@@ -95,30 +98,28 @@ class SubmitController extends AppController{
             $model->phone = $post['phone'];
 
 
-            if ($model->sendEmail()){
+            if ($model->sendEmail()) {
                 return [
-                    'status'=>'true',
-                    'statusss'=>'true',
-                    'text'=>'Заявка принята, мы позвоним вам в близжайшее время',
+                    'status' => 'true',
+                    'statusss' => 'true',
+                    'text' => 'Заявка принята, мы позвоним вам в близжайшее время',
                 ];
-            }else{
+            } else {
                 return [
-                    'status'=>'false',
-                    'ssss'=>$model->sendEmail(),
-                    'text'=>'Не удалось отправить сообщение администратору',
+                    'status' => 'false',
+                    'ssss' => $model->sendEmail(),
+                    'text' => 'Не удалось отправить сообщение администратору',
                 ];
             }
-
-
         }
         return [
-            'status'=>'true',
-            'text'=>'Отправлено не по аяксу',
+            'status' => 'true',
+            'text' => 'Отправлено не по аяксу',
         ];
-
     }
 
-    public function actionLogout() {
+    public function actionLogout()
+    {
         $cokies = Yii::$app->request->cookies;
         if ($cokies->has('hash')) {
             $cokies = Yii::$app->response->cookies;
@@ -128,29 +129,29 @@ class SubmitController extends AppController{
         return $this->redirect(['site/index']);
     }
 
-    public function actionObratnaj() {
+    public function actionObratnaj()
+    {
 
         $settings = Yii::$app->settings;
         $post = Yii::$app->request->post();
         Yii::$app->response->format = Response::FORMAT_JSON;
         $contactForm = new ContactForm();
 
-        $contactForm->load( $post );
-        if ( $contactForm->validate() ) {
+        $contactForm->load($post);
+        if ($contactForm->validate()) {
 
             $message = '';
-            $message .= "<p><b>Имя</b>: " . Html::encode( $contactForm->name ) . "</p>";
-            $message .= "<p><b>Emai</b>l: " . Html::encode( $contactForm->email ) . "</b></p>";
-            $message .= "<p><b>Телефон</b>: " . Html::encode( $contactForm->phone ) . "</b></p>";
-            $message .= "<p>Текст: <br /> " . Html::encode( $contactForm->text ) . "</p>";
+            $message .= "<p><b>Имя</b>: " . Html::encode($contactForm->name) . "</p>";
+            $message .= "<p><b>Emai</b>l: " . Html::encode($contactForm->email) . "</b></p>";
+            $message .= "<p><b>Телефон</b>: " . Html::encode($contactForm->phone) . "</b></p>";
+            $message .= "<p>Текст: <br /> " . Html::encode($contactForm->text) . "</p>";
 
             Yii::$app->mailer->compose()
-                    ->setFrom( [Yii::$app->params['adminEmail'] => Yii::$app->name . ' robot'] )
-                    ->setTo( trim( $settings->get('Settings.email') ) )
-                    ->setSubject( 'Форма обратной связи' )
-                    ->setHtmlBody( $message )
-                    ->send()
-            ;
+                ->setFrom([Yii::$app->params['adminEmail'] => Yii::$app->name . ' robot'])
+                ->setTo(trim($settings->get('Settings.email')))
+                ->setSubject('Форма обратной связи')
+                ->setHtmlBody($message)
+                ->send();
 
             return [
                 'status' => true,
@@ -161,7 +162,8 @@ class SubmitController extends AppController{
         }
     }
 
-    private function reGoogle($p) {
+    private function reGoogle($p)
+    {
         $client = new Client();
         $response = $client->createRequest()
             ->setMethod('POST')
@@ -176,7 +178,8 @@ class SubmitController extends AppController{
         return $status;
     }
 
-    public function actionComment() {
+    public function actionComment()
+    {
         $this->setAjaxRequest();
         $post = Yii::$app->request->post();
         $model = new CommentForm();
@@ -193,7 +196,8 @@ class SubmitController extends AppController{
         ];
     }
 
-    public function actionSearch() {
+    public function actionSearch()
+    {
 
         $searchModel = new \frontend\models\BrandsBoilersSearch();
 
@@ -228,7 +232,7 @@ class SubmitController extends AppController{
                 'status' => false,
             ];
         }
-        
+
         $dataProvider = $searchModel->searchSphinxPage(Yii::$app->request->get());
         return $this->render('/goods/search', ['dataProvider' => $dataProvider, 'modelSearch' => $searchModel]);
     }
@@ -238,8 +242,8 @@ class SubmitController extends AppController{
         Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         $response = [];
         $cityId = Yii::$app->request->post()['cityId'];
-        $city = City::findOne( $cityId );
-        Yii::$app->city->add( $city );
+        $city = City::findOne($cityId);
+        Yii::$app->city->add($city);
 
         $response['status'] = true;
         $response['cityId'] = $cityId;
@@ -247,7 +251,7 @@ class SubmitController extends AppController{
         return $response;
     }
 
-    public function actionFeedback() 
+    public function actionFeedback()
     {
         $post = $this->setAjaxRequest();
 
@@ -265,24 +269,22 @@ class SubmitController extends AppController{
             ]
         ];
 
-        
-        $feedbackForm->load( $post );
 
-        if ( $feedbackForm->validate() ) {
+        $feedbackForm->load($post);
+
+        if ($feedbackForm->validate()) {
             $message = '';
-            $message .= "<p><b>Имя</b>: " . Html::encode( $feedbackForm->name ) . "</p>";
-            $message .= "<p><b>Телефон</b>: " . Html::encode( $feedbackForm->phone ) . "</b></p>";
+            $message .= "<p><b>Имя</b>: " . Html::encode($feedbackForm->name) . "</p>";
+            $message .= "<p><b>Телефон</b>: " . Html::encode($feedbackForm->phone) . "</b></p>";
 
             $res = Yii::$app->mailer->compose()
-                    ->setFrom( [Yii::$app->params['adminEmail'] => Yii::$app->name . ' robot'] )
-                    ->setTo( trim( $settings->get('Settings.email') ) )
-                    ->setSubject( 'Форма обратного звонка' )
-                    ->setHtmlBody( $message )
-                    ->send()
-            ;
+                ->setFrom([Yii::$app->params['adminEmail'] => Yii::$app->name . ' robot'])
+                ->setTo(trim($settings->get('Settings.email')))
+                ->setSubject('Форма обратного звонка')
+                ->setHtmlBody($message)
+                ->send();
 
             $response['status'] = $res;
-
         } else {
             $response['errors'] = $feedbackForm->getErrors();
             $response['successModal']['content'] = 'Ошибка отправки';
@@ -291,4 +293,35 @@ class SubmitController extends AppController{
         return $response;
     }
 
+    public function actionOrder()
+    {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+        $get = Yii::$app->request->get();
+
+        $response['status'] = false;
+        $response['message'] = "Извините, возникла непридвиденная ошибка";
+
+        if (isset($get['phone']) && !empty($get['phone'])) {
+
+            $settings = Yii::$app->settings;
+
+            $message = '<p><b>Новая заявка на запись.</b></p>';
+            $message .= "<p><b>Имя</b>: " . Html::encode($get['name']) . "</p>";
+            $message .= "<p><b>Телефон</b>: " . Html::encode($get['phone']) . "</p>";
+            $message .= "<p><b>Дата</b>: " . Html::encode($get['date']) . "</p>";
+
+            $res = Yii::$app->mailer->compose()
+                ->setFrom([Yii::$app->params['adminEmail'] => Yii::$app->name . ' robot'])
+                ->setTo(trim($settings->get('Settings.email')))
+                ->setSubject('Заявка на запись')
+                ->setHtmlBody($message)
+                ->send();
+
+            $response['status'] = true;
+            $response['message'] = "Заявка создана. Ожидайте, с Вами свяжутся в ближайшее время";
+        }
+
+        return $response;
+    }
 }

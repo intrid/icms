@@ -5,16 +5,16 @@
 				<p class="nav-list__link nav-list__link--head" tabindex="0" aria-haspopup="true">Оптика и
 					офтальмология</p>
 				<ul class="nav-list__submenu submenu" aria-label="выпадающее меню">
-					<li class="submenu__item"><a class="nav-list__link" href="/">Подбор очков</a></li>
-					<li class="submenu__item"><a class="nav-list__link" href="/">Подбор контактных линз</a></li>
+					<li class="submenu__item"><a class="nav-list__link" href="/podbor-ockov">Подбор очков</a></li>
+					<li class="submenu__item"><a class="nav-list__link" href="/podbor-kontaktnyh-linz">Подбор контактных линз</a></li>
 				</ul>
 			</li>
 			<li class="nav-list__item">
 				<p class="nav-list__link nav-list__link--head" tabindex="0" aria-haspopup="true">Изготовление и
 					ремонт очков</p>
 				<ul class="nav-list__submenu submenu" aria-label="выпадающее меню">
-					<li class="submenu__item"><a class="nav-list__link" href="/">Производство очков</a></li>
-					<li class="submenu__item"><a class="nav-list__link" href="/">Ремонт очков</a></li>
+					<li class="submenu__item"><a class="nav-list__link" href="/proizvodstvo-ockov">Производство очков</a></li>
+					<li class="submenu__item"><a class="nav-list__link" href="/remont-ockov">Ремонт очков</a></li>
 				</ul>
 			</li>
 			<li class="nav-list__item"><a class="nav-list__link" href="/">Контактные линзы</a></li>
