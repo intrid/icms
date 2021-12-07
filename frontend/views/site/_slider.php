@@ -3,7 +3,7 @@
 		<?php if (!empty($slides)) : ?>
 			<?php $i = 0; ?>
 			<?php foreach ($slides as $slide) : ?>
-				<div class="swiper-slide <?= $slide->class ?>">
+				<div class="swiper-slide open-banner">
 					<div class="open-banner__wrapper <?= ($i == 0) ? "" : "other-slides" ?>">
 						<?= $slide->name ?>
 					</div>

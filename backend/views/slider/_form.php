@@ -39,18 +39,10 @@ use yii\widgets\ActiveForm;
                             }
                             ?>
                         </div>
-                        <div class="col-sm-6">
 
-                        <?= $form->field($model, 'class')->textInput() ?>
-                        </div>
 
                         <div class="col-sm-3">
-                            <div class="pull-right pull-right-check">
-                                <?php echo $form->field($model, 'visibility', ['options' => ['class' => 'form-group cust-checkbox'], 'template' => '<label> {input} <span class="cust-checkbox__box"></span> Опубликовать</label>'])->checkbox([], false);  ?>
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <?= $form->field($model, 'prev_tablet')->fileInput(['accept' => "image/jpeg, image/png"])->label('Изображение (1280x488)') ?>
+                            <?= $form->field($model, 'prev_tablet')->fileInput(['accept' => "image/jpeg, image/png"])->label('Изображение (1280x326)') ?>
                             <?php
                             $image = $model->getImageByName('slider_tablet');
                             if (!empty($image)) {
@@ -58,7 +50,7 @@ use yii\widgets\ActiveForm;
                             }
                             ?>
                         </div>
-                        <div class="col-sm-12">
+                        <div class="col-sm-3">
                             <?= $form->field($model, 'prev_mobile')->fileInput(['accept' => "image/jpeg, image/png"])->label('Изображение (768x378)') ?>
                             <?php
                             $image = $model->getImageByName('slider_mobile');
@@ -66,6 +58,12 @@ use yii\widgets\ActiveForm;
                                 print $this->render('../common/_view_image', compact('image', 'model'));
                             }
                             ?>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="pull-right pull-right-check">
+                                <?php echo $form->field($model, 'visibility', ['options' => ['class' => 'form-group cust-checkbox'], 'template' => '<label> {input} <span class="cust-checkbox__box"></span> Опубликовать</label>'])->checkbox([], false);  ?>
+                            </div>
                         </div>
 
                     </div>

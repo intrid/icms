@@ -17,11 +17,11 @@
 					<li class="submenu__item"><a class="nav-list__link" href="/remont-ockov">Ремонт очков</a></li>
 				</ul>
 			</li>
-			<li class="nav-list__item"><a class="nav-list__link" href="/">Контактные линзы</a></li>
-			<li class="nav-list__item"><a class="nav-list__link" href="/">Об оптике</a></li>
-			<li class="nav-list__item"><a class="nav-list__link" href="/">Наши специалисты</a></li>
-			<li class="nav-list__item"><a class="nav-list__link" href="/">Отзывы</a></li>
-			<li class="nav-list__item"><a class="nav-list__link" href="/">Контакты</a></li>
+			<li class="nav-list__item"><a class="nav-list__link" href="/kontaktnye-linzy">Контактные линзы</a></li>
+			<li class="nav-list__item"><a class="nav-list__link" href="/ob-optike">Об оптике</a></li>
+			<li class="nav-list__item"><a class="nav-list__link" href="/specialists">Наши специалисты</a></li>
+			<li class="nav-list__item"><a class="nav-list__link" href="/reviews">Отзывы</a></li>
+			<li class="nav-list__item"><a class="nav-list__link" href="/kontakty">Контакты</a></li>
 		</ul>
 	</nav>
 	<div class="menu__form"></div>
