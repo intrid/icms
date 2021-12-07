@@ -17,10 +17,12 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/46.css',
         'css/main.css',
+        'css/custom.css',
     ];
     public $js = [
         'js/46.js',
         'js/main.js',
+        'js/custom.js',
     ];
 
     public $depends = [

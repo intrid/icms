@@ -1,0 +1,17 @@
+.message-popup {
+	max-width: 580px;
+	position: fixed;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #fff;
+	padding: 10px;
+	text-align: center;
+	z-index: 10;
+	border-radius: 10px;
+	box-shadow: 0 0 20px 8px rgba(11, 132, 205, 0.45);
+}
+
+.message-popup p {
+	font-size: 1.3rem;
+}
