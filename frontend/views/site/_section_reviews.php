@@ -2,7 +2,7 @@
 
 use common\models\Reviews;
 
-$reviews = Reviews::find(['visibility' => 1])->orderBy('created_at DESC')->all();
+$reviews = Reviews::find(['visibility' => 1, 'is_delete' => 0])->orderBy('created_at DESC')->all();
 
 ?>
 
@@ -19,13 +19,13 @@ $reviews = Reviews::find(['visibility' => 1])->orderBy('created_at DESC')->all()
 
 					<?php if (!empty($reviews)) : ?>
 						<?php foreach ($reviews as $review) : ?>
-							<blockquote class="reviews-slider__item swiper-slide">
-								<cite class="reviews-slider__author"><?= $review->name?></cite>
-								<time class="reviews-slider__date"><?= date('d.m.Y', $review->created_at) ?></time>
-								<p class="reviews-slider__text">
+							<blockquote class="reviews-slider__item review swiper-slide">
+								<cite class="review__author"><?= $review->name?></cite>
+								<time class="review__date"><?= date('d.m.Y', $review->created_at) ?></time>
+								<p class="review__text">
 									<?= $review->text?>
 								</p>
-								<a href="<?= !empty($review->link) ? $review->link : "#"?>" class="reviews-slider__link" aria-label="Перейти к отзыву"></a>
+								<a href="<?= !empty($review->link) ? $review->link : "#"?>" class="review__link" aria-label="Перейти к отзыву"></a>
 							</blockquote>
 						<?php endforeach; ?>
 					<?php endif; ?>

@@ -65,6 +65,9 @@ $config = [
                 '/polytic' => 'site/agreement',
                 '/logout' => '/user/default/logout',
 
+                'specialists' => 'specialists/index',
+                'reviews' => 'reviews/index',
+
                 '<slug>' => 'page/view',
 
                 [

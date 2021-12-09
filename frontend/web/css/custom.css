@@ -15,3 +15,22 @@
 .message-popup p {
 	font-size: 1.3rem;
 }
+
+.pagination {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+}
+
+.pagination li {
+	margin: 0 5px;
+	font-size: 20px;
+}
+
+.pagination .active a {
+	color: #85ba5d;
+}
+
+.pagination a {
+	text-decoration: none;
+}
