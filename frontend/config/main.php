@@ -18,7 +18,7 @@ return [
     ],
     'controllerNamespace' => 'frontend\controllers',
     'language' => 'ru-Ru',
-    'name' => 'vinlam',
+    'name' => 'cleveroptic',
     'modules' => [],
     'components' => [
         

@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'adminEmail' => 'no-reply@vinlam.ru',
-    'admin_email' => 'no-reply@vinlam.ru',
+    'adminEmail' => 'no-reply@cleveroptic.ru',
+    'admin_email' => 'no-reply@cleveroptic.ru',
     'bsVersion' => '4.x'
 ];
 

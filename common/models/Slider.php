@@ -50,7 +50,7 @@ class Slider extends AppModel
         ];
     }
 
-    public function uploadImgPrev(): bool
+    public function uploadImgPrev()
     {
         if ($this->validate()) {
 
@@ -66,7 +66,7 @@ class Slider extends AppModel
         }
     }
 
-    public function uploadImgPrevMobile(): bool
+    public function uploadImgPrevMobile()
     {
         if ($this->validate()) {
 
@@ -82,7 +82,7 @@ class Slider extends AppModel
         }
     }
 
-    public function uploadImgPrevTablet(): bool
+    public function uploadImgPrevTablet()
     {
         if ($this->validate()) {
 

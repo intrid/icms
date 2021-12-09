@@ -104,7 +104,8 @@ class SubmitController extends AppController
             $message .= "<p><b>Телефон</b>: " . Html::encode($get['phone']) . "</p>";
             $message .= "<p><b>Дата</b>: " . (!empty($get['date']) ? Html::encode($get['date']) : "Не выбрано")  . "</p>";
 
-            $res = Yii::$app->mailer->compose()
+            $mailer = MyHelper::getIcmsMailer();
+            $res = $mailer->compose()
                 ->setFrom([Yii::$app->params['adminEmail'] => Yii::$app->name . ' robot'])
                 ->setTo(trim($settings->get('Settings.email')))
                 ->setSubject('Заявка на запись')
