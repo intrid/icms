@@ -4,6 +4,12 @@ use common\models\Brands;
 
 $brands = Brands::find(['visibility' => 1])->orderBy('id DESC')->all();
 
+if (!empty($brands)){
+	while(count($brands) <= 7){
+		$brands = array_merge($brands, $brands);
+	}
+}
+
 ?>
 <section class="brands <?= isset($class) ? $class : ""?>">
 	<div class="content brands__content">
