@@ -3,7 +3,7 @@
 		<a href="/" class="logo" title="На главную" aria-label="На главную страницу">
 			<img src="/img/logo.png" alt="Умная оптика">
 		</a>
-		<a href="#map" class="address header__address">
+		<a href="#map" class="address header__address" title="Посмотреть на карте">
 			<p class="address__cord">
 				<?= Yii::$app->settings->get('Settings.address_place') ?>
 			</p>

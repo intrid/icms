@@ -18,6 +18,6 @@
 		<?php endif; ?>
 	</div>
 	<div class="swiper-pagination"></div>
-	<button class="swiper-button-prev"></button>
-	<button class="swiper-button-next"></button>
+	<button class="swiper-button-prev" aria-label="Назад"></button>
+	<button class="swiper-button-next" aria-label="Вперед"></button>
 </div>

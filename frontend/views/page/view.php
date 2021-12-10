@@ -13,6 +13,11 @@ if ((strripos($text, '[%brands%]'))) {
 	$text = str_replace("[%brands%]", $this->render('../common/_section_brands', compact('class')), $text);
 }
 
+// Специалисты
+if ((strripos($text, '[%specialists%]'))) {
+	$text = str_replace("[%specialists%]", $this->render('../common/_section_specialists'), $text);
+}
+
 ?>
 
 <?= $text ?>

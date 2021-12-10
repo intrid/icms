@@ -46,7 +46,7 @@ AppAsset::register($this);
 
         <div class="site-name">
           <a href="/" target="_blank" title="Перейти на сайт в новом окне">
-            <img class="site-favicon" src=""><span class="text-white"><?= Yii::$app->name?></span>
+            <img class="site-favicon" src=""><span class="text-white">Умная оптика</span>
           </a>
         </div>
 

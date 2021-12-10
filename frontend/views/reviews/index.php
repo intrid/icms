@@ -38,7 +38,6 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'отзывы, опт
 <article class="feedback">
 	<div class="feedback__content">
 		<p class="feedback__title">Запишитесь на консультацию к специалисту</p>
-		<p class="feedback__subtitle">Оставьте заявку, и наши специалисты свяжутся с вами в ближайшее время</p>
 		<form action="/submit/order" method="get" class="form feedback__form">
 			<fieldset class="form__wrapper">
 				<legend class="form__legend visually-hidden">Записаться на прием</legend>

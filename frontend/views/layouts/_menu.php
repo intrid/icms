@@ -1,4 +1,7 @@
 <div class="menu">
+    <a href="/" class="logo menu__logo" title="На главную">
+        <img src="/img/logo-small.png" alt="Умная оптика">
+    </a>
 	<nav class="nav menu__nav">
 		<ul class="nav-list nav__list">
 			<li class="nav-list__item">
@@ -17,9 +20,9 @@
 					<li class="submenu__item"><a class="nav-list__link" href="/remont-ockov">Ремонт очков</a></li>
 				</ul>
 			</li>
-			<li class="nav-list__item"><a class="nav-list__link" href="https://linzavrn.ru/" target="_blank">Контактные линзы</a></li>
-			<!-- <li class="nav-list__item"><a class="nav-list__link" href="/ob-optike">Об оптике</a></li> -->
-			<li class="nav-list__item"><a class="nav-list__link" href="/specialists">Наши специалисты</a></li>
+			<li class="nav-list__item"><a class="nav-list__link" href="https://linzavrn.ru/" rel="noreferrer noopener" target="_blank" title="Перейти на сайт linzavrn.ru">Контактные линзы</a></li>
+			<li class="nav-list__item"><a class="nav-list__link" href="/ob-optike">Об оптике</a></li>
+			<!-- <li class="nav-list__item"><a class="nav-list__link" href="/specialists">Наши специалисты</a></li> -->
 			<li class="nav-list__item"><a class="nav-list__link" href="/reviews">Отзывы</a></li>
 			<li class="nav-list__item"><a class="nav-list__link" href="/kontakty">Контакты</a></li>
 		</ul>

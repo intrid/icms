@@ -11,7 +11,7 @@ $reviews = Reviews::find(['visibility' => 1, 'is_delete' => 0])->orderBy('create
 		<h3 class="reviews__title">Отзывы</h3>
 		<div class="reviews__link-block link-block"><span class="link-block__num"><?= Yii::$app->settings->get('Settings.yandex_score') ?></span>
 			<p class="link-block__title">Отзывы в Яндексе</p>
-			<a class="link-block__link" target="_blank" href="<?= Yii::$app->settings->get('Settings.yandex_link') ?>">перейти к отзывам</a>
+			<a class="link-block__link" rel="noreferrer noopener" target="_blank" href="<?= Yii::$app->settings->get('Settings.yandex_link') ?>">перейти к отзывам</a>
 		</div>
 		<div class="reviews__slider">
 			<div class="reviews-slider">
@@ -34,8 +34,8 @@ $reviews = Reviews::find(['visibility' => 1, 'is_delete' => 0])->orderBy('create
 			</div>
 			<div class="swiper-controls">
 				<div class="swiper-pagination"></div>
-				<button class="swiper-button-prev"></button>
-				<button class="swiper-button-next"></button>
+				<button class="swiper-button-prev" aria-label="Назад"></button>
+				<button class="swiper-button-next" aria-label="Вперед"></button>
 			</div>
 		</div>
 	</div>
