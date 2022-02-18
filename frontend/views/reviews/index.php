@@ -2,10 +2,10 @@
 
 use yii\widgets\LinkPager;
 
-$this->title = "Отзывы";
+$this->title = "Отзывы об оптики и офтальмологиии | Умная оптика";
 
-$this->registerMetaTag(['name' => 'description', 'content' => 'Отзывы наших клиентов']);
-$this->registerMetaTag(['name' => 'keywords', 'content' => 'отзывы, оптика']);
+$this->registerMetaTag(['name' => 'description', 'content' => 'Отзывы наших клиентов об оптики и офтальмологии Уманая оптика в Воронеже']);
+$this->registerMetaTag(['name' => 'keywords', 'content' => 'отзывы, оптика, фтальмология, отзывы о специалистах']);
 
 ?>
 

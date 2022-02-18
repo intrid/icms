@@ -156,52 +156,14 @@ class SitemapGeneratorComponent extends Component
 
         $i = "0.9";
 
-        // Категории
-        $cats = \common\models\Category::find()->all();
-        foreach ($cats as $cat) {
-            $good_page_url = Yii::$app->urlManagerFrontend->createAbsoluteUrl([$cat->slug . '/all']);
-            fwrite($handle, "\t<url>\n\t\t<loc>" . $good_page_url . "</loc>\n\t\t<priority>" . $i . "</priority>\n\t</url>\n");
-        }
-
-        // Бренды категорий
-        foreach ($cats as $cat) {
-            $brandsCat = \common\models\Category::getBrandsByCategoryId($cat->id);
-            foreach ($brandsCat as $brand) {
-                $good_page_url = Yii::$app->urlManagerFrontend->createAbsoluteUrl([$cat->slug . '/' . $brand->slug]);
-                fwrite($handle, "\t<url>\n\t\t<loc>" . $good_page_url . "</loc>\n\t\t<priority>" . $i . "</priority>\n\t</url>\n");
-            }
-        }
-
-        $i = "0.8";
-
-        // Товары
-        $goods = \common\models\goods\Good::find()->where(['is_delete' => 0, 'visibility' => 1])->andWhere(['!=', 'price_vrn', 0])->all();
-        foreach ($goods as $good) {
-            $good_page_url = Yii::$app->urlManagerFrontend->createAbsoluteUrl(['goods/' . $good->slug]);
-            fwrite($handle, "\t<url>\n\t\t<loc>" . $good_page_url . "</loc>\n\t\t<priority>" . $i . "</priority>\n\t</url>\n");
-        }
-
-        $i = "0.7";
-
         $pages = \common\models\Page::find()->where(['is_delete' => 0])->all();
         foreach ($pages as $page) {
-            $page_url = Yii::$app->urlManagerFrontend->createAbsoluteUrl(['page/' . $page->slug]);
+            $page_url = Yii::$app->urlManagerFrontend->createAbsoluteUrl([$page->slug]);
             $page_update_time = date(\DateTime::W3C, $page->updated_at);
             fwrite($handle, "\t<url>\n\t\t<loc>" . $page_url . "</loc>\n\t\t<lastmod>" . $page_update_time . "</lastmod>\n\t\t<priority>" . $i . "</priority>\n\t</url>\n");
         }
 
-        $i = "0.6";
-
-        $acrticle = \common\models\Article::find()->where(['visibility' => 1, 'is_delete' => 0])->all();
-        foreach ($acrticle as $good) {
-            $good_page_url = Yii::$app->urlManagerFrontend->createAbsoluteUrl(['article/' . $good->slug]);
-            $good_update_time = date(\DateTime::W3C, $good->updated_at);
-            fwrite($handle, "\t<url>\n\t\t<loc>" . $good_page_url . "</loc>\n\t\t<lastmod>" . $good_update_time . "</lastmod>\n\t\t<priority>" . $i . "</priority>\n\t</url>\n");
-        }
-
-        $i = "0.5";
-
-        $other_page_route = ['article/index'];
+        $other_page_route = ['reviews', 'ob-optike'];
 
         foreach ($other_page_route as $route) {
             $page_url = Yii::$app->urlManagerFrontend->createAbsoluteUrl([$route]);

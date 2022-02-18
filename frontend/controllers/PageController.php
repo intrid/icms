@@ -37,7 +37,7 @@ class PageController extends Controller
 
     private function findModel($slug)
     {
-        return Page::find()->where(['slug' => $slug])->one();
+        return Page::find()->where(['slug' => $slug, 'visibility' => 1])->one();
     }
 
     public function actionCode()

@@ -55,3 +55,41 @@
 		font-size: 20px;
 	}
 }
+
+.swiper-pagination-bullet {
+	margin: 0 3px;
+}
+
+[data-fancybox] {
+	cursor: pointer;
+}
+
+.product__title a {
+	text-decoration: none;
+}
+
+.product__title a:hover {
+	text-decoration: underline;
+
+
+}
+.product--wrap .product__img {
+	flex-shrink: 0;
+}
+
+.breadcrubms {
+	list-style: none;
+	display: flex;
+	margin: 20px 0 0;
+	padding: 0;
+	align-items: center;
+}
+.breadcrumbs__item {
+	margin-right: 5px;
+}
+.breadcrumbs__link::after {
+	content: '/';
+	display: inline-block;
+	font-size: 20px;
+	margin-left: 5px;
+}

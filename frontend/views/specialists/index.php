@@ -1,9 +1,9 @@
 <?php
 
-$this->title = "Об оптике";
+$this->title = "Информация об оптике и офтальмологии | Умная оптика";
 
 $this->registerMetaTag(['name' => 'description', 'content' => 'Умная оптика оказывает квалифицированные медицинские услуги и услуги по изготовлению и ремонту очков. Здесь работают квалифицированные врачи-офтальмологи и оптометристы']);
-$this->registerMetaTag(['name' => 'keywords', 'content' => 'об оптике, специалисты, оптика, умная оптика']);
+$this->registerMetaTag(['name' => 'keywords', 'content' => 'об оптике, специалисты, оптика, умная оптика, лицензии']);
 
 ?>
 
@@ -11,19 +11,28 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'об оптике, �
 	<div class="content">
 		<h1>Об оптике</h1>
 		<p>
-			ООО «ОПТИЧЕСКИЕ ТОВАРЫ» выступает под брендом "Умная оптика" и оказывает квалифицированные медицинские услуги и услуги по изготовлению и ремонту очков.
-			В нашей компании работают квалифицированные врачи-офтальмологи и оптометристы.
+			ООО «ОПТИЧЕСКИЕ ТОВАРЫ» выступает под брендом "Умная оптика". Квалифицированные врачи-офтальмологи и оптометристы оказывают медицинские услуги по подбору очков и контактных линз. Также специалисты оптики изготовят очки и при необходимости отремонтируют их.
 		</p>
 	</div>
 </section>
 
 <section class="licensies">
 	<div class="content">
-		<div class="license" data-fancybox="gallery" data-src="/img/lic001.jpg"><img alt="Документ #1" src="/img/license-1.jpg" /></div>
-		<div class="license" data-fancybox="gallery" data-src="/img/lic002.jpg"><img alt="Документ #2" src="/img/license-2.jpg" /></div>
-		<div class="license" data-fancybox="gallery" data-src="/img/lic003.jpg"><img alt="Документ #3" src="/img/license-3.jpg" /></div>
-		<div class="license" data-fancybox="gallery" data-src="/img/lic004.jpg"><img alt="Документ #4" src="/img/license-4.jpg" /></div>
-		<div class="license" data-fancybox="gallery" data-src="/img/lic005.jpg"><img alt="Документ #5" src="/img/license-5.jpg" /></div>
+<div class="license" data-fancybox="gallery" data-src="/img/lic/licn1.jpg"><img alt="" src="/img/lic/licns1.jpg" /></div>
+
+<div class="license" data-fancybox="gallery" data-src="/img/lic/licn2.jpg"><img alt="" src="/img/lic/licns2.jpg" /></div>
+
+<div class="license" data-fancybox="gallery" data-src="/img/lic/licn3.jpg"><img alt="" src="/img/lic/licns3.jpg" /></div>
+
+<div class="license" data-fancybox="gallery" data-src="/img/lic/svid1.jpg"><img alt="" src="/img/lic/svids.jpg" /></div>
+
+<div class="license" data-fancybox="gallery" data-src="/img/lic/svid2.jpg"><img alt="" src="/img/lic/svids2.jpg" /></div>
+
+<div class="license" data-fancybox="gallery" data-src="/img/lic/uved.jpg"><img alt="" src="/img/lic/uvedomls.jpg" /></div>
+
+<div class="license" data-fancybox="gallery" data-src="/img/lic/vipis.jpg"><img alt="" src="/img/lic/vipiss1.jpg" /></div>
+
+<div class="license" data-fancybox="gallery" data-src="/img/lic/vipic2.jpg"><img alt="" src="/img/lic/vipiss2.jpg" /></div>
 	</div>
 </section>
 
@@ -58,7 +67,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'об оптике, �
 			<div class="swiper-wrapper">
 				<?php if (!empty($photos)) : ?>
 					<?php foreach ($photos as $photo) : ?>
-						<div data-src="<?= $photo->getImage()->getPathToOrigin() ?>" class="swiper-slide our-slider__slide" data-fancybox>
+						<div data-src="<?= $photo->getImage()->getPathToOrigin() ?>" class="swiper-slide our-slider__slide" data-fancybox="gallery-1">
 							<img src="<?= $photo->getImage()->getPath('470x') ?>" alt="<?= $photo->name ?>">
 						</div>
 					<?php endforeach; ?>

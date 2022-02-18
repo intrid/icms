@@ -20,7 +20,7 @@ use backend\components\widgets\Alert;
                     ['label' => 'Галерея', 'icon' => 'camera', 'url' => ['/gallery']],
                     ['label' => 'Страницы', 'icon' => 'sticky-note', 'url' => ['/page']],
                     ['label' => 'Отзывы', 'icon' => 'comment-o', 'url' => ['/reviews']],
-                    // ['label' => 'Генерация SiteMap', 'icon' => 'share', 'url' => ['/site/sitemap'], ],
+                    ['label' => 'Генерация SiteMap', 'icon' => 'share', 'url' => ['/site/sitemap'], ],
                     ['label' => 'Настройки', 'icon' => 'cog', 'url' => ['/site/index']],
                 ],
             ]

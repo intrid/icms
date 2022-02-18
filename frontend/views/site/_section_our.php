@@ -13,7 +13,7 @@ $photos = Gallery::find(['visibility' => 1])->orderBy('id DESC')->limit(10)->all
 			<div class="swiper-wrapper">
 				<?php if (!empty($photos)) : ?>
 					<?php foreach ($photos as $photo) : ?>
-						<div data-src="<?= $photo->getImage()->getPathToOrigin() ?>" class="swiper-slide our-slider__slide" data-fancybox>
+						<div data-src="<?= $photo->getImage()->getPathToOrigin() ?>" class="swiper-slide our-slider__slide" data-fancybox="gallery-1">
 							<img src="<?= $photo->getImage()->getPath('470x') ?>" alt="<?= $photo->name ?>">
 						</div>
 					<?php endforeach; ?>

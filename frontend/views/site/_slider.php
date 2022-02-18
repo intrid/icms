@@ -8,9 +8,9 @@
 						<?= $slide->name ?>
 					</div>
 					<picture class="open-banner__img">
-						<source srcset="<?= $slide->getImageByName('slider_desktop')->getPath(); ?>" media="(min-width: 1280px)">
-						<source srcset="<?= $slide->getImageByName('slider_tablet')->getPath(); ?>" media="(min-width: 768px)">
-						<img src="<?= $slide->getImageByName('slider_mobile')->getPath(); ?>" alt="Умная оптика">
+						<source srcset="<?= $slide->getImageByName('slider_desktop')->getPathToOrigin(); ?>" media="(min-width: 1280px)">
+						<source srcset="<?= $slide->getImageByName('slider_tablet')->getPathToOrigin(); ?>" media="(min-width: 768px)">
+						<img src="<?= $slide->getImageByName('slider_mobile')->getPathToOrigin(); ?>" alt="Умная оптика">
 					</picture>
 				</div>
 				<?php $i++; ?>

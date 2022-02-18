@@ -1,6 +1,6 @@
 <article class="feedback">
 	<div class="feedback__content">
-		<p class="feedback__title">Запишитесь на консультацию к специалисту</p>
+		<h2 class="feedback__title">Запишитесь на консультацию к специалисту</h2>
 		<form action="/submit/order" method="get" class="form feedback__form">
 			<fieldset class="form__wrapper">
 				<legend class="form__legend visually-hidden">Записаться на прием</legend>

@@ -22,7 +22,7 @@ class SiteController extends AppController
 
     public function actionIndex()
     {
-        $slides = Slider::find(['visibility' => 1])->all();
+        $slides = Slider::find()->where(['visibility' => 1])->all();
 
         return $this->render('index', compact('slides'));
     }

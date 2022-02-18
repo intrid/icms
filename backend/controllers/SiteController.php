@@ -142,8 +142,6 @@ class SiteController extends Controller {
     public function actionSitemap() 
     {
         Yii::$app->sitemapGenerator->myGenerateSitemapVrn();
-        Yii::$app->sitemapGenerator->myGenerateSitemapLvn();
-        Yii::$app->sitemapGenerator->myGenerateSitemapFrl();
         
         Yii::$app->session->setFlash('success', 'Sitemap сгенерирован и опубликован');
 
